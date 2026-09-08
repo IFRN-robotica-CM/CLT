@@ -19,10 +19,10 @@
 //-----PINOS PARA SENSORES REFLETANCIA-----//
 
 
-#define DIVISOR_BRANCO_PRETO_MAIS_ESQ 60
-#define DIVISOR_BRANCO_PRETO_ESQ 70
-#define DIVISOR_BRANCO_PRETO_DIR 60
-#define DIVISOR_BRANCO_PRETO_MAIS_DIR 60
+#define DIVISOR_BRANCO_PRETO_MAIS_ESQ 80
+#define DIVISOR_BRANCO_PRETO_ESQ 80
+#define DIVISOR_BRANCO_PRETO_DIR 70
+#define DIVISOR_BRANCO_PRETO_MAIS_DIR 80
 #define DIVISOR_DE_DISTANCIA 15
 
 float valorSensorDir;
@@ -71,6 +71,7 @@ bool pppb(){
 
 void setup(){
   robo.configurar();
+  Serial.begin(9600);
 }
 
 void loop(){
@@ -82,36 +83,43 @@ void loop(){
    valorSensorFrontal = robo.lerSensorSonarFrontal();
 
   //Identifica se os dois sensores viram branco
+
+  if(pppp()){
+    Serial.println("Está tudo preto");
+  }else{
+    Serial.println("fALHOU");
+  }
+  delay(1000);
    
-  if (pppp()){ 
-    robo.acionarMotores(0,0);}
-  else if (pppb()){ 
-    robo.acionarMotores(-0,80);}
-  else if (ppbb()){ 
-    robo.acionarMotores(-0,80);}
-  else if (pbbb()){  
-    robo.acionarMotores(-0,80);}
-  else if(bppp()){ 
-    robo.acionarMotores(80,-0);}
-  else if(bppb()){
-    robo.acionarMotores(80,80);}
-  else if(bpbb()){ 
-    robo.acionarMotores(-0,80);}
-  else if(bbpp()){
-    robo.acionarMotores(80,-0);}
-  else if(bbpb()){
-    robo.acionarMotores(80,-0);}
-  else if(bbbp()){
-    robo.acionarMotores(80,-0);}
-  else if(bbbb()){
-    robo.acionarMotores(80,80);}
-    else{
-      robo.acionarMotores(0,0);
-  delay(1000);
-  robo.acionarMotores(40, -40);
-  delay(210);
-  robo.acionarMotores(0,0);
-  delay(1000);
-    }
+  // if (pppp()){ 
+  //   robo.acionarMotores(0,0);}
+  // else if (pppb()){ 
+  //   robo.acionarMotores(-0,80);}
+  // else if (ppbb()){ 
+  //   robo.acionarMotores(-0,80);}
+  // else if (pbbb()){  
+  //   robo.acionarMotores(-0,80);}
+  // else if(bppp()){ 
+  //   robo.acionarMotores(80,-0);}
+  // else if(bppb()){
+  //   robo.acionarMotores(80,80);}
+  // else if(bpbb()){ 
+  //   robo.acionarMotores(-0,80);}
+  // else if(bbpp()){
+  //   robo.acionarMotores(80,-0);}
+  // else if(bbpb()){
+  //   robo.acionarMotores(80,-0);}
+  // else if(bbbp()){
+  //   robo.acionarMotores(80,-0);}
+  // else if(bbbb()){
+  //   robo.acionarMotores(80,80);}
+  //   else{
+  //     robo.acionarMotores(0,0);
+  // delay(1000);
+  // robo.acionarMotores(40, -40);
+  // delay(210);
+  // robo.acionarMotores(0,0);
+  // delay(1000);
+  //   }
   
 }
