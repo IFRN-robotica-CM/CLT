@@ -23,7 +23,7 @@
 #define DIVISOR_BRANCO_PRETO_ESQ 70
 #define DIVISOR_BRANCO_PRETO_DIR 60
 #define DIVISOR_BRANCO_PRETO_MAIS_DIR 60
-#define DIVISOR_DE_DISTANCIA 10
+#define DIVISOR_DE_DISTANCIA 15
 
 float valorSensorDir;
 float valorSensorEsq;
