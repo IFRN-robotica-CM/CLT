@@ -19,55 +19,42 @@
 //-----PINOS PARA SENSORES REFLETANCIA-----//
 
 
-#define DIVISOR_BRANCO_PRETO_MAIS_ESQ 80
-#define DIVISOR_BRANCO_PRETO_ESQ 80
-#define DIVISOR_BRANCO_PRETO_DIR 70
-#define DIVISOR_BRANCO_PRETO_MAIS_DIR 80
+
 #define DIVISOR_DE_DISTANCIA 15
 
-float valorSensorDir;
-float valorSensorEsq;
-float valorSensorMaisEsq;
-float valorSensorMaisDir;
-float valorSensorFrontal;
+#include "SensorReflet.h"
 
 
-bool pppp(){
-  return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ  && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR) ;
-}
 
-bool bbbb(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
+// bool bbbp(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool bbpb(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool bbpp(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool bpbb(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool bppb(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool bppp(){
+//   return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool pbbb(){
+//   return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool ppbb(){
+//   return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
+// bool pppb(){
+//   return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
+// }
 
-bool bbbp(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool bbpb(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool bbpp(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool bpbb(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool bppb(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool bppp(){
-  return (valorSensorMaisEsq > DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir < DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool pbbb(){
-  return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq > DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool ppbb(){
-  return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir > DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-bool pppb(){
-  return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);
-}
-
+SensorReflet sensorlinha;
 
 void setup(){
   robo.configurar();
@@ -76,16 +63,10 @@ void setup(){
 
 void loop(){
 
-  valorSensorEsq = robo.lerSensorLinhaEsq(); //Le o valor do sensor esquerdo e coloca dentro da variavel valor_sensor_esq
-  valorSensorDir = robo.lerSensorLinhaDir(); //Le o valor do sensor direito e coloca dentro da variavel valor_sensor_dir
-  valorSensorMaisEsq = robo.lerSensorLinhaMaisEsq();
-  valorSensorMaisDir = robo.lerSensorLinhaMaisDir();
-   valorSensorFrontal = robo.lerSensorSonarFrontal();
-
   //Identifica se os dois sensores viram branco
 
-  if(pppp()){
-    Serial.println("Está tudo preto");
+  if(sensorlinha.bbbb()){
+    Serial.println("Está tudo branco");
   }else{
     Serial.println("fALHOU");
   }
