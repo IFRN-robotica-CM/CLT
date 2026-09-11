@@ -55,6 +55,7 @@
 // }
 
 SensorReflet sensorlinha;
+Movimento movimento;
 
 void setup(){
   robo.configurar();
@@ -66,7 +67,9 @@ void loop(){
   //Identifica se os dois sensores viram branco
 
   if(sensorlinha.bbbb()){
-    Serial.println("Está tudo branco");
+    // Serial.println("Está tudo branco");
+    movimento.paraFrente();
+
   }else{
     Serial.println("fALHOU");
   }
