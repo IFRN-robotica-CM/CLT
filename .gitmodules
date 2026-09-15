@@ -1,3 +1,15 @@
 [submodule "lib/VL53L0X"]
 	path = lib/VL53L0X
 	url = https://github.com/pololu/vl53l0x-arduino.git
+[submodule "lib/Adafruit_BusIO"]
+	path = lib/Adafruit_BusIO
+	url = https://github.com/adafruit/Adafruit_BusIO.git
+[submodule "lib/tcs34725"]
+	path = lib/tcs34725
+	url = https://github.com/adafruit/Adafruit_TCS34725.git
+[submodule "lib/roboHardware"]
+	path = lib/roboHardware
+	url = https://github.com/IFRN-robotica-CM/robo_hardware.git
+[submodule "lib/servo"]
+	path = lib/servo
+	url = https://github.com/arduino-libraries/Servo.git
