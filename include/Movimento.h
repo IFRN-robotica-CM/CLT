@@ -9,10 +9,10 @@ class Movimento{
 
   public:
 
-  inline void paraFrente();
-  inline void parar();
-  inline void virarDireita();
-  inline void virarEsquerda();
+ void paraFrente();
+ void parar();
+ void virarDireita();
+ void virarEsquerda();
   
 
 };
