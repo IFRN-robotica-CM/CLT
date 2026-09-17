@@ -13,6 +13,7 @@ class Estrategia{
     public:
     void executar();
     void seguirLinha();
+    
 
 };
 

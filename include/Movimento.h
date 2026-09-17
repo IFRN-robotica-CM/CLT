@@ -9,8 +9,10 @@ class Movimento{
 
   public:
 
-  void paraFrente();
-  inline void parar() {robo.acionarMotores(0,0);}
+  inline void paraFrente();
+  inline void parar();
+  inline void virarDireita();
+  inline void virarEsquerda();
   
 
 };

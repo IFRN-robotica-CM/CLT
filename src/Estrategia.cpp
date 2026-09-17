@@ -13,29 +13,41 @@ void Estrategia::seguirLinha(){
 
   movimento.paraFrente();
 
-  // if (sensorLinha.pppp()){ 
-  //   movimento.parar();
-  // }
-//   else if (pppb()){ 
-//     robo.acionarMotores(-0,80);}
-//   else if (ppbb()){ 
-//     robo.acionarMotores(-0,80);}
-//   else if (pbbb()){  
-//     robo.acionarMotores(-0,80);}
-//   else if(bppp()){ 
-//     robo.acionarMotores(80,-0);}
-//   else if(bppb()){
-//     robo.acionarMotores(80,80);}
-//   else if(bpbb()){ 
-//     robo.acionarMotores(-0,80);}
-//   else if(bbpp()){
-//     robo.acionarMotores(80,-0);}
-//   else if(bbpb()){
-//     robo.acionarMotores(80,-0);}
-//   else if(bbbp()){
-//     robo.acionarMotores(80,-0);}
-//   else if(bbbb()){
-//     robo.acionarMotores(80,80);}
+  if (sensorLinha.pppp()){ 
+    movimento.parar();
+    }
+  else if (sensorLinha.pppb()){ 
+     movimento.virarEsquerda();
+    }
+  else if (sensorLinha.ppbb()){ 
+    movimento.virarEsquerda();
+    }
+   else if (sensorLinha.pbbb()){  
+    movimento.virarEsquerda();
+    }
+   else if(sensorLinha.bppp()){ 
+    movimento.virarDireita();
+    }
+   else if(sensorLinha.bppb()){
+    movimento.paraFrente();
+    }
+   else if(sensorLinha.bpbb()){ 
+     movimento.virarEsquerda();
+    }
+   else if(sensorLinha.bbpp()){
+     movimento.virarDireita();
+    }
+   else if(sensorLinha.bbpb()){
+     movimento.virarDireita();
+    }
+   else if(sensorLinha.bbbp()){
+     movimento.virarDireita();
+    }
+   else if(sensorLinha.bbbb()){
+     movimento.paraFrente();
+    }
+
+// -------- SENSOR DE OBSTACULO ------
 //     else{
 //       robo.acionarMotores(0,0);
 //   delay(1000);
