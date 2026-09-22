@@ -5,7 +5,12 @@ void Estrategia::executar(){
   // if(proximoAoObtaculo())
   //     deseviarObstaculo()
   // else
-  seguirLinha();
+  //seguirLinha();
+
+  movimento.paraFrente();
+  delay(1000);
+  movimento.parar();
+  delay(500);
 
 }
 
