@@ -1,20 +1,26 @@
 #ifndef MOVIMENTO_H
 #define MOVIMENTO_H
 
-#define VEL_PARA_FRENTE 50
 
 #include <robo_hardware2.h>
 
-class Movimento{
-
+class Movimento {
   public:
+    inline void paraFrente() {
+      robo.acionarMotores(50, 50);
+    }
 
- void paraFrente();
- void parar();
- void virarDireita();
- void virarEsquerda();
-  
+    inline void parar() {
+      robo.acionarMotores(0, 0);
+    }
 
+    inline void virarDireita() {
+      robo.acionarMotores(50, 0);
+    }
+
+    inline void virarEsquerda() {
+      robo.acionarMotores(0, 50);
+    }
 };
 
 #endif
