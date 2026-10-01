@@ -34,10 +34,27 @@ Estrategia estrategia;
 void setup(){
   robo.configurar();
   Serial.begin(9600);
+  
 }
 
 void loop(){
+  // float valorSensorEsq = robo.lerSensorLinhaEsq(); //Le o valor do sensor esquerdo e coloca dentro da variavel valor_sensor_esq
+  // float valorSensorDir = robo.lerSensorLinhaDir(); //Le o valor do sensor direito e coloca dentro da variavel valor_sensor_dir
+  // float valorSensorMaisEsq = robo.lerSensorLinhaMaisEsq();
+  // float valorSensorMaisDir = robo.lerSensorLinhaMaisDir();
 
+  // Serial.print(valorSensorMaisEsq);
+  // Serial.print(";\t");
+  // Serial.print(valorSensorEsq);
+  // Serial.print(";\t");
+  // Serial.print(valorSensorDir);
+  // Serial.print(";\t");
+  // Serial.println(valorSensorMaisDir);
+  // delay(1000);
   estrategia.executar();
+  // digitalWrite(A9,HIGH);
+  // digitalWrite(A1,HIGH);
+  // digitalWrite(A2,HIGH);
+  // digitalWrite(A10,HIGH);
   
 }

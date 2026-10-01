@@ -7,7 +7,7 @@
 class Movimento {
   public:
     inline void paraFrente() {
-      robo.acionarMotores(50, 50);
+      robo.acionarMotores(85, 92); // (dir, esq)
     }
 
     inline void parar() {
