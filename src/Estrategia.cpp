@@ -7,10 +7,14 @@ void Estrategia::executar(){
   // else
   //seguirLinha();
 
+  // movimento.paraFrente();
+  // delay(1000);
+  // movimento.parar();
+  // delay(500);
   movimento.paraFrente();
-  delay(1000);
-  movimento.parar();
-  delay(500);
+  if (sensorLinha.pppp()){ 
+    movimento.parar();
+    }
 
 }
 
