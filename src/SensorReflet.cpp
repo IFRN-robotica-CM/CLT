@@ -7,3 +7,14 @@ void SensorReflet::ler(){
   valorSensorMaisEsq = robo.lerSensorLinhaMaisEsq();
   valorSensorMaisDir = robo.lerSensorLinhaMaisDir();
 }
+
+void SensorReflet::printDados(){
+  Serial.print(valorSensorMaisEsq);
+  Serial.print(";\t");
+  Serial.print(valorSensorEsq);
+  Serial.print(";\t");
+  Serial.print(valorSensorDir);
+  Serial.print(";\t");
+  Serial.println(valorSensorMaisDir);
+  delay(1000);
+}

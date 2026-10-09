@@ -1,10 +1,10 @@
 #ifndef SENSOR_REFLET_H
 #define SENSOR_REFLET_H
 
-#define DIVISOR_BRANCO_PRETO_MAIS_ESQ 69
-#define DIVISOR_BRANCO_PRETO_ESQ 70
-#define DIVISOR_BRANCO_PRETO_DIR 70
-#define DIVISOR_BRANCO_PRETO_MAIS_DIR 80
+#define DIVISOR_BRANCO_PRETO_MAIS_ESQ 20
+#define DIVISOR_BRANCO_PRETO_ESQ 20
+#define DIVISOR_BRANCO_PRETO_DIR 20
+#define DIVISOR_BRANCO_PRETO_MAIS_DIR 45
 
 #include <robo_hardware2.h> 
 
@@ -42,6 +42,8 @@ class SensorReflet{
   inline bool pppb(){ return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);}
   
   void ler();
+
+  void printDados();
 
 };
 
