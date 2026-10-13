@@ -18,3 +18,10 @@ void SensorReflet::printDados(){
   Serial.println(valorSensorMaisDir);
   delay(1000);
 }
+
+void SensorReflet::LigarLedSensor(){
+  digitalWrite(LED_SENSOR_LINHA_MAIS_ESQUERDO,HIGH);
+  digitalWrite(LED_SENSOR_LINHA_ESQUERDO,HIGH);
+  digitalWrite(LED_SENSOR_LINHA_DIREITO,HIGH);
+  digitalWrite(LED_SENSOR_LINHA_MAIS_DIREITO,HIGH);
+}

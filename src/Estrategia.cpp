@@ -15,6 +15,8 @@ void Estrategia::executar(){
 
   sensorLinha.ler();
   seguirLinha();
+  // sensorLinha.printDados();
+
   // movimento.paraFrente();
   
   // delay(1000);

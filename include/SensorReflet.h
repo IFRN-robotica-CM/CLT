@@ -41,9 +41,11 @@ class SensorReflet{
   
   inline bool pppb(){ return (valorSensorMaisEsq < DIVISOR_BRANCO_PRETO_MAIS_ESQ && valorSensorEsq < DIVISOR_BRANCO_PRETO_ESQ && valorSensorDir < DIVISOR_BRANCO_PRETO_DIR && valorSensorMaisDir > DIVISOR_BRANCO_PRETO_MAIS_DIR);}
   
-  void ler();
 
+  
+  void ler();
   void printDados();
+  void LigarLedSensor();
 
 };
 
