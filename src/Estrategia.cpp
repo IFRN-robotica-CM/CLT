@@ -14,25 +14,18 @@ void Estrategia::executar(){
 
 
   sensorLinha.ler();
+  // sensorLinha.LigarLedSensor();
   seguirLinha();
   // sensorLinha.printDados();
 
-  // movimento.paraFrente();
-  
-  // delay(1000);
-  // movimento.virarDireita();
-  // delay(1000);
 
 
   // if (sensorLinha.bbbb()){
   //    movimento.paraFrente();
   //    Serial.println("branco");
   //   }
- 
-  //  delay(50);
 
   // sensorLinha.printDados();
-  
 
 }
 
@@ -40,8 +33,10 @@ void Estrategia::seguirLinha(){
 
   movimento.paraFrente();
 
+  // if (sensorLinha.pppp()){ 
+  //   movimento.parar();
   if (sensorLinha.pppp()){ 
-    movimento.parar();
+    movimento.paraFrente();
     }
   else if (sensorLinha.pppb()){ 
      movimento.virarEsquerda();
