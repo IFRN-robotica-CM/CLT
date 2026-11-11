@@ -5,7 +5,27 @@ void Estrategia::executar(){
   // if(proximoAoObtaculo())
   //     deseviarObstaculo()
   // else
+  //seguirLinha();
+
+  // movimento.paraFrente();
+  // delay(1000);
+  // movimento.parar();
+  // delay(500);
+
+
+  sensorLinha.ler();
+  // sensorLinha.LigarLedSensor();
   seguirLinha();
+  // sensorLinha.printDados();
+
+
+
+  // if (sensorLinha.bbbb()){
+  //    movimento.paraFrente();
+  //    Serial.println("branco");
+  //   }
+
+  // sensorLinha.printDados();
 
 }
 
@@ -13,8 +33,10 @@ void Estrategia::seguirLinha(){
 
   movimento.paraFrente();
 
+  // if (sensorLinha.pppp()){ 
+  //   movimento.parar();
   if (sensorLinha.pppp()){ 
-    movimento.parar();
+    movimento.paraFrente();
     }
   else if (sensorLinha.pppb()){ 
      movimento.virarEsquerda();
@@ -40,10 +62,10 @@ void Estrategia::seguirLinha(){
    else if(sensorLinha.bbpb()){
      movimento.virarDireita();
     }
-   else if(sensorLinha.bbbp()){
+   else if(sensorLinha.bbbp()){ // não está funcionando plenamente, não dectecta o preto
      movimento.virarDireita();
     }
-   else if(sensorLinha.bbbb()){
+   else if(sensorLinha.bbbb()){ // não está funcionando também
      movimento.paraFrente();
     }
 

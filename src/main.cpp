@@ -34,10 +34,12 @@ Estrategia estrategia;
 void setup(){
   robo.configurar();
   Serial.begin(9600);
+  
 }
 
 void loop(){
 
   estrategia.executar();
+  // sensorlinha.printDados();
   
 }
