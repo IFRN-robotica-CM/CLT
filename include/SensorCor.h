@@ -4,6 +4,8 @@
 #include <robo_hardware2.h> 
 #include <Servo.h>
 
+
+
 //-----PINOS PARA SENS/ORES DE COR I2C-----//
 //  SDA_SENSOR_COR_DIREITO  42
 //  SCL_SENSOR_COR_DIREITO  40
@@ -19,9 +21,16 @@ class SensorCor {
     public:
     RGBC leituraSensorCorDir; 
     RGBC leituraSensorCorEsq; 
-
-
+    RGBC red;
+    RGBC green;
+    RGBC blue;
+    RGBC clear;     
 
     void LerSensorCor();
-};
+    void TesteDeCor();
+
+    // void CorVerde();
+
+    // inline bool verde() {};
+}
 #endif
