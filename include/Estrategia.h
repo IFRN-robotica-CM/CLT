@@ -3,12 +3,14 @@
 
 #include "SensorReflet.h"
 #include "Movimento.h"
+#include "SensorCor.h"
 
 class Estrategia{
 
     private:
         SensorReflet sensorLinha;
         Movimento movimento;
+        
 
     public:
     void executar();

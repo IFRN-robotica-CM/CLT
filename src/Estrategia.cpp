@@ -15,8 +15,8 @@ void Estrategia::executar(){
 
   sensorLinha.ler();
   // sensorLinha.LigarLedSensor();
-  seguirLinha();
-  // sensorLinha.printDados();
+  // seguirLinha();
+  sensorLinha.printDados();
 
 
 

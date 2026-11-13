@@ -26,10 +26,12 @@
 
 #include "SensorReflet.h"
 #include "Estrategia.h"
+#include "SensorCor.h"
 
 SensorReflet sensorlinha;
 Movimento movimento;
 Estrategia estrategia;
+SensorCor sensorcor;
 
 void setup(){
   robo.configurar();
@@ -39,7 +41,9 @@ void setup(){
 
 void loop(){
 
-  estrategia.executar();
+  // estrategia.executar();
   // sensorlinha.printDados();
+  sensorcor.LerSensorCor();
+
   
 }
