@@ -34,7 +34,7 @@ Estrategia estrategia;
 SensorCor sensorcor;
 
 void setup(){
-  robo.configurar();
+  robo.configurar(false, true);
   Serial.begin(9600);
   
 }
@@ -43,7 +43,7 @@ void loop(){
 
   // estrategia.executar();
   // sensorlinha.printDados();
-  sensorcor.LerSensorCor();
+  sensorcor.Cor(); 
 
   
 }

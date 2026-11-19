@@ -16,21 +16,36 @@
 //  LED_SENSOR_COR_ESQUERDO  36
 //-----PINOS PARA SENSORES DE COR I2C-----//
 
+//  O tipo HSV e formado por tres valores: 
+//  float h   //valor varia de 0 ate 359
+//  float s   //valor varia de 0 ate 1. Isso inclui: 0.1 0.34 0.73
+//  int v     //valor vaira de 0 ate 255
+//Declaração de uma variável do tipo RGB
+
 class SensorCor {
 
     public:
     RGBC leituraSensorCorDir; 
     RGBC leituraSensorCorEsq; 
-    RGBC red;
-    RGBC green;
-    RGBC blue;
-    RGBC clear;     
+    HSV leituraSensorCor; 
+    HSV leituraHSVDir;
+    HSV leituraHSVEsq;
 
-    void LerSensorCor();
+    HSV hsvDir;
+    HSV hsvEsq;
+
+    enum Verde {
+    VERDE_DIR,
+    VERDE_ESQ,
+    VERDE_DUPLO,
+    VERDE_ZERO
+    };
+     
+    void LerSensorCorRGB();
+    void LerSensorCorHSV();
     void TesteDeCor();
 
-    // void CorVerde();
+    Verde Cor();
 
-    // inline bool verde() {};
-}
+};
 #endif
