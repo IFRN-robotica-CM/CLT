@@ -10,11 +10,14 @@ class Estrategia{
     private:
         SensorReflet sensorLinha;
         Movimento movimento;
+        SensorCor sensorcor;
+        
         
 
     public:
     void executar();
     void seguirLinha();
+    void executarVerde();
     
 
 };

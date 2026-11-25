@@ -11,9 +11,10 @@ void Estrategia::executar(){
   // delay(1000);
   // movimento.parar();
   // delay(500);
+  // sensorcor.LerSensorCorHSV();
 
 
-  sensorLinha.ler();
+ 
   // sensorLinha.LigarLedSensor();
   seguirLinha();
   // sensorLinha.printDados();
@@ -30,13 +31,12 @@ void Estrategia::executar(){
 }
 
 void Estrategia::seguirLinha(){
-
+  sensorLinha.ler();
   movimento.paraFrente();
 
-  // if (sensorLinha.pppp()){ 
-  //   movimento.parar();
+
   if (sensorLinha.pppp()){ 
-    movimento.paraFrente();
+    executarVerde();
     }
   else if (sensorLinha.pppb()){ 
      movimento.virarEsquerda();
@@ -62,10 +62,10 @@ void Estrategia::seguirLinha(){
    else if(sensorLinha.bbpb()){
      movimento.virarDireita();
     }
-   else if(sensorLinha.bbbp()){ // não está funcionando plenamente, não dectecta o preto
+   else if(sensorLinha.bbbp()){
      movimento.virarDireita();
     }
-   else if(sensorLinha.bbbb()){ // não está funcionando também
+   else if(sensorLinha.bbbb()){ 
      movimento.paraFrente();
     }
 
@@ -80,3 +80,27 @@ void Estrategia::seguirLinha(){
 //     }
 }
 
+void Estrategia::executarVerde(){
+  movimento.parar();
+  SensorCor::Verde tipoVerde = sensorcor.Cor();
+
+  if(tipoVerde == sensorcor.VERDE_DIR){
+    movimento.virarDireita();
+    delay(1500);
+  }
+  else if(tipoVerde == sensorcor.VERDE_ESQ){
+    movimento.virarEsquerda();
+    delay(1500);
+  }
+  else if (tipoVerde == sensorcor.VERDE_DUPLO){
+    movimento.girar180();
+    delay(1500);
+  }
+  else if(tipoVerde == sensorcor.VERDE_ZERO){
+    movimento.paraFrente();
+    delay(900);
+    seguirLinha();
+   
+  
+}
+}
