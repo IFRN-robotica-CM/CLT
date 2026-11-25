@@ -3,6 +3,8 @@
 
 #include <robo_hardware2.h> 
 #include <Servo.h>
+#include "Movimento.h"
+
 
 
 
@@ -23,7 +25,7 @@
 //Declaração de uma variável do tipo RGB
 
 class SensorCor {
-
+    
     public:
     RGBC leituraSensorCorDir; 
     RGBC leituraSensorCorEsq; 
@@ -34,6 +36,7 @@ class SensorCor {
     HSV hsvDir;
     HSV hsvEsq;
 
+
     enum Verde {
     VERDE_DIR,
     VERDE_ESQ,
@@ -43,7 +46,6 @@ class SensorCor {
      
     void LerSensorCorRGB();
     void LerSensorCorHSV();
-    void TesteDeCor();
 
     Verde Cor();
 
