@@ -21,6 +21,16 @@ class Movimento {
     inline void virarEsquerda() {
       robo.acionarMotores(90, -90);
     }
+
+    inline void paraTras() {
+      robo.acionarMotores(-90, -90);
+    }
+
+    inline void girar180() {
+      robo.acionarMotores(90, -90);
+      delay(4000);
+      
+    }
 };
 
 #endif
