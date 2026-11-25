@@ -41,9 +41,11 @@ void setup(){
 
 void loop(){
 
-  // estrategia.executar();
-  // sensorlinha.printDados();
-  sensorcor.Cor(); 
+  estrategia.executar();
+  // sensorcor.Cor(); 
+  // sensorcor.LerSensorCorHSV();
+
+  
 
   
 }
