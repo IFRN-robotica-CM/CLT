@@ -17,9 +17,9 @@ class Estrategia{
     public:
     void executar();
     void seguirLinha();
-    void executarVerde();
-    
-
+    void executarVerdePPPP();
+    void executarVerdeBBPP();
+    void executarVerdePPBB();
 };
 
 

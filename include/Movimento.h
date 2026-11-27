@@ -28,7 +28,7 @@ class Movimento {
 
     inline void girar180() {
       robo.acionarMotores(90, -90);
-      delay(4000);
+      delay(2500);
       
     }
 };

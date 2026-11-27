@@ -80,30 +80,30 @@ SensorCor::Verde SensorCor::Cor(){
   hsvEsq = robo.corEsq.getHSV();
   
   bool MatizDir = (hsvDir.h >= 90 && hsvDir.h <= 150);
-  bool SaturacaoDir = (hsvDir.s >= 0.30);
-  bool LuminosidadeDir = (hsvDir.v >= 590 && hsvDir.v <= 700);
+  bool SaturacaoDir = (hsvDir.s >= 0.28);
+  bool LuminosidadeDir = (hsvDir.v >= 590 && hsvDir.v <= 750);
   bool EhVerdeDir = (MatizDir && SaturacaoDir && LuminosidadeDir);
 
-  bool MatizEsq = (hsvEsq.h >= 90.00 && hsvEsq.h <= 150.00);
-  bool SaturacaoEsq = (hsvEsq.s >= 0.29);
+  bool MatizEsq = (hsvEsq.h >= 75.00 && hsvEsq.h <= 150.00);
+  bool SaturacaoEsq = (hsvEsq.s >= 0.26);
   bool LuminosidadeEsq = (hsvEsq.v >= 230 && hsvEsq.v <330);
   bool EhVerdeEsq = (MatizEsq && SaturacaoEsq && LuminosidadeEsq);
 
   if(EhVerdeDir && EhVerdeEsq){
-    // Serial.println("os dois sensores estão lendo verde");
+    Serial.println("os dois sensores estão lendo verde");
     return VERDE_DUPLO;
   }
     else if(EhVerdeDir){
-      // Serial.println(" sensor direito leu verde");
+      Serial.println(" sensor direito leu verde");
       return VERDE_DIR;
 
   }
     else if(EhVerdeEsq){
-      // Serial.println("sensor esquerdo leu verde");
+      Serial.println("sensor esquerdo leu verde");
       return VERDE_ESQ;
   }
   else {
-    // Serial.println("Deu errado");
+    Serial.println("Deu errado");
     return VERDE_ZERO;
   }
 }

@@ -1,7 +1,6 @@
 #include "Estrategia.h"
 
 void Estrategia::executar(){
-
   // if(proximoAoObtaculo())
   //     deseviarObstaculo()
   // else
@@ -12,14 +11,10 @@ void Estrategia::executar(){
   // movimento.parar();
   // delay(500);
   // sensorcor.LerSensorCorHSV();
-
-
  
   // sensorLinha.LigarLedSensor();
-  seguirLinha();
+  // sensorLinha.ler();
   // sensorLinha.printDados();
-
-
 
   // if (sensorLinha.bbbb()){
   //    movimento.paraFrente();
@@ -28,6 +23,7 @@ void Estrategia::executar(){
 
   // sensorLinha.printDados();
 
+  seguirLinha();
 }
 
 void Estrategia::seguirLinha(){
@@ -36,13 +32,14 @@ void Estrategia::seguirLinha(){
 
 
   if (sensorLinha.pppp()){ 
-    executarVerde();
+    executarVerdePPPP();
     }
   else if (sensorLinha.pppb()){ 
      movimento.virarEsquerda();
     }
   else if (sensorLinha.ppbb()){ 
-    movimento.virarEsquerda();
+    // movimento.virarEsquerda();
+    executarVerdePPBB();
     }
    else if (sensorLinha.pbbb()){  
     movimento.virarEsquerda();
@@ -57,7 +54,9 @@ void Estrategia::seguirLinha(){
      movimento.virarEsquerda();
     }
    else if(sensorLinha.bbpp()){
-     movimento.virarDireita();
+    //  movimento.virarDireita();
+    executarVerdeBBPP();
+
     }
    else if(sensorLinha.bbpb()){
      movimento.virarDireita();
@@ -68,27 +67,21 @@ void Estrategia::seguirLinha(){
    else if(sensorLinha.bbbb()){ 
      movimento.paraFrente();
     }
-
-// -------- SENSOR DE OBSTACULO ------
-//     else{
-//       robo.acionarMotores(0,0);
-//   delay(1000);
-//   robo.acionarMotores(40, -40);
-//   delay(210);
-//   robo.acionarMotores(0,0);
-//   delay(1000);
-//     }
 }
 
-void Estrategia::executarVerde(){
+void Estrategia::executarVerdePPPP(){
   movimento.parar();
   SensorCor::Verde tipoVerde = sensorcor.Cor();
 
   if(tipoVerde == sensorcor.VERDE_DIR){
+    movimento.paraFrente();
+    delay(500);
     movimento.virarDireita();
     delay(1500);
   }
   else if(tipoVerde == sensorcor.VERDE_ESQ){
+    movimento.paraFrente();
+    delay(500);
     movimento.virarEsquerda();
     delay(1500);
   }
@@ -100,7 +93,40 @@ void Estrategia::executarVerde(){
     movimento.paraFrente();
     delay(900);
     seguirLinha();
-   
-  
 }
+}
+
+void Estrategia::executarVerdeBBPP(){
+  movimento.parar();
+  SensorCor::Verde tipoVerde = sensorcor.Cor();
+
+  if(tipoVerde == sensorcor.VERDE_DIR){
+    movimento.paraFrente();
+    delay(500);
+    movimento.virarDireita();
+    delay(1500);
+  }
+  else if(tipoVerde == sensorcor.VERDE_ESQ){
+    movimento.paraFrente();
+    delay(500);
+    movimento.virarEsquerda();
+    delay(1500);
+  }
+  else if (tipoVerde == sensorcor.VERDE_DUPLO){
+    movimento.girar180();
+    delay(1500);
+  }
+  // else if(tipoVerde == sensorcor.VERDE_ZERO){
+  //   movimento.virarDireita();
+  //   for(100){
+  //     delay(1);
+  //     (sensorLinha.pbbb() or sensorLinha.ppbb() or sensorLinha.bpbb() or sensorLinha.);
+  //     break;
+  //   }
+  //   seguirLinha();
+  // }
+}
+
+void Estrategia::executarVerdePPBB(){
+
 }
